@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { ArrowLeft } from "lucide-react";
+import { withBase } from "./base";
 
 type ComingSoonProps = {
   icon: LucideIcon;
@@ -24,7 +25,7 @@ export function ComingSoon({ icon: Icon, title, text }: ComingSoonProps) {
           <span className="chrome-text">{title}</span>
         </h1>
         <p className="mt-4 leading-relaxed text-muted">{text}</p>
-        <a href="/" className="btn-ghost mt-8 gap-2">
+        <a href={withBase("/")} className="btn-ghost mt-8 gap-2">
           <ArrowLeft className="size-4" aria-hidden="true" />
           На главную
         </a>

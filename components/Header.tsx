@@ -4,22 +4,23 @@ import { useEffect, useState, type MouseEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { GraduationCap, Headset, House, UserRound, X } from "lucide-react";
 import { RadialOrbitalTimeline, type OrbitalItem } from "@/components/ui/radial-orbital-timeline";
+import { withBase } from "./base";
 import { Mark, Wordmark } from "./Logo";
 
 const links = [
-  { href: "/#program", label: "Программа" },
-  { href: "/#how", label: "Как учимся" },
-  { href: "/#pricing", label: "Тарифы" },
-  { href: "/#faq", label: "Вопросы" },
+  { href: withBase("/#program"), label: "Программа" },
+  { href: withBase("/#how"), label: "Как учимся" },
+  { href: withBase("/#pricing"), label: "Тарифы" },
+  { href: withBase("/#faq"), label: "Вопросы" },
 ];
 
 // Пункты орбитального меню, которое открывает кнопка с домиком.
 // Разделы главной сюда не дублируются — они уже есть в шапке
 const orbit: OrbitalItem[] = [
-  { label: "Главная", icon: House, href: "/#top" },
-  { label: "Мои курсы", icon: GraduationCap, href: "/courses" },
-  { label: "Поддержка", icon: Headset, href: "/support" },
-  { label: "Профиль", icon: UserRound, href: "/profile" },
+  { label: "Главная", icon: House, href: withBase("/#top") },
+  { label: "Мои курсы", icon: GraduationCap, href: withBase("/courses") },
+  { label: "Поддержка", icon: Headset, href: withBase("/support") },
+  { label: "Профиль", icon: UserRound, href: withBase("/profile") },
 ];
 
 export function Header() {
@@ -54,7 +55,7 @@ export function Header() {
     <>
       <header className="fixed inset-x-0 top-3 z-50 px-4">
         <div className="glass mx-auto flex h-14 bg-black/70 max-w-[1120px] items-center justify-between rounded-full pl-4 pr-2 sm:pl-5">
-          <a href="/#top" className="flex items-center gap-2" aria-label="SkullFlame — на главную">
+          <a href={withBase("/#top")} className="flex items-center gap-2" aria-label="SkullFlame — на главную">
             <Mark id="hdr" className="size-8" />
             <Wordmark className="text-[15px]" />
           </a>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Clock, Mail, MessageCircle } from "lucide-react";
+import { withBase } from "./base";
 import { LeadForm } from "./LeadForm";
 
 const channels = [
@@ -41,7 +42,7 @@ export function SupportView() {
           </div>
         ))}
         <a
-          href="/#faq"
+          href={withBase("/#faq")}
           className="glass group flex items-center justify-between gap-4 rounded-[22px] p-5 transition-colors hover:border-white/25"
         >
           <span>

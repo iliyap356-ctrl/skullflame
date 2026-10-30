@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CalendarDays, LogOut, Mail, Pencil } from "lucide-react";
+import { withBase } from "./base";
 import { DemoButton } from "./DemoButton";
 import { TIER_COLORS } from "./tiers";
 
@@ -98,7 +99,7 @@ export function ProfileView() {
             На <span style={{ color: ultra.light }}>ULTRA</span> — личные созвоны с наставником и помощь с первыми заказами.
           </p>
           <a
-            href="/#pricing"
+            href={withBase("/#pricing")}
             className="btn-chrome shrink-0 px-5 py-2.5 text-sm"
             style={{ background: `linear-gradient(180deg, #fff, ${ultra.light} 45%, ${ultra.base})` }}
           >
